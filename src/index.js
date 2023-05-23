@@ -2,10 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
+import './box.css';
+import './signup.css';
 import SignupForm from './signup';
 import SignInPage from './signin';
 import Layout from './layout';
 import LogOut from './logout';
+import Container from './box';
 
 const Myelement = (
     <>
@@ -14,6 +17,7 @@ const Myelement = (
                 <Route path="/signup" element={<SignupForm />}></Route>
                 <Route path="/Signin" element={<SignInPage />}></Route>
                 <Route path="/logout" element={<LogOut />}></Route>
+                <Route path="/box" element={<Container />}></Route>
                 <Route path="/" element={<Layout />}></Route>
             </Routes>
         </BrowserRouter>

@@ -1,0 +1,38 @@
+.main {
+    background: white;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.input-field {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+}
+
+.container-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.text {
+    background: linear-gradient(to right, #00b4db, #0083b0);
+    width: 100px; /* Adjust the width as desired */
+    height: 30px; /* Adjust the height as desired */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin: auto;
+}

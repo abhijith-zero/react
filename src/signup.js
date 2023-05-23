@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './signup.css'; // Import the CSS file for custom styling
 
 const SignupForm = () => {
     const [name, setName] = useState('');
@@ -29,96 +30,52 @@ const SignupForm = () => {
             console.error(error);
         }
     };
+
     return (
-        <div
-            class="main"
-            style={{
-                margin: 'auto',
-                background: 'white',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: '100vh',
-                position: 'relative',
-            }}
-        >
-            <div
-                class="semi"
-                style={{
-                    width: '20rem',
-                    position: 'auto',
-                    height: '30rem',
-                    padding: '5px',
-                    background: 'linear-gradient(to right, #00b4db, #0083b0)',
-                    borderRadius: '10rem 10rem 0 0',
-                }}
-            >
-                <div
-                    class="rect"
-                    style={{
-                        background: 'white',
-                        padding: '20px',
-                        borderRadius: '10px',
-                    }}
-                >
-                    <div>
-                        <h1>Let's go!</h1>
-                    </div>
-                    <form onSubmit={handleSubmit}>
-                        <p>Full Name</p>
-                        <input
-                            type="text"
-                            placeholder="Name"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            style={{
-                                marginBottom: '10px',
-                                width: '100%',
-                                padding: '5px',
-                            }}
-                        />
-                        <p>Email</p>
-                        <input
-                            type="email"
-                            placeholder="Email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            style={{
-                                marginBottom: '10px',
-                                width: '100%',
-                                padding: '5px',
-                            }}
-                        />
-                        <p>Choose Password</p>
-                        <input
-                            type="password"
-                            placeholder="Password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            style={{
-                                marginBottom: '10px',
-                                width: '100%',
-                                padding: '5px',
-                            }}
-                        />
-                        <button
-                            type="submit"
-                            style={{
-                                background:
-                                    'linear-gradient(to right, #00b4db, #0083b0)',
-                                width: '100%',
-                                padding: '10px',
-                                borderRadius: '5px',
-                                color: 'white',
-                                fontWeight: 'bold',
-                            }}
-                        >
-                            Sign Up
-                        </button>
-                    </form>
+        <div className="main">
+            <div className="semi"></div>
+            <div className="rect">
+                <div>
+                    <h1>Let's go!</h1>
+                </div>
+                <form onSubmit={handleSubmit}>
+                    <p>Full Name</p>
+                    <input
+                        type="text"
+                        placeholder="Name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className="input-field"
+                    />
+                    <p>Email</p>
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="input-field"
+                    />
+                    <p>Choose Password</p>
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        className="input-field"
+                    />
+                    <button type="submit" className="submit-button">
+                        Sign Up
+                    </button>
+                </form>
+                <div>
+                    <input type="text" value="Already have an account?" />
+                    <button type="submit" className="text">
+                        Login
+                    </button>
                 </div>
             </div>
         </div>
     );
 };
+
 export default SignupForm;

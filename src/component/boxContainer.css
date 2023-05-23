@@ -1,0 +1,13 @@
+.box-container {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border: 1px solid #ac0d0d;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 5px;
+}
