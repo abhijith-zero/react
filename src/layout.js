@@ -12,7 +12,7 @@ const Layout = () => {
                         <Link to="/signin">signIn</Link>
                     </li>
                     <li>
-                        <Link to="/logout">LogOut</Link>
+                        <Link to="/getuser">GetUser</Link>
                     </li>
                     <li>
                         <Link to="/box">Box</Link>

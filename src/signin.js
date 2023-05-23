@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
 const SignInPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [message, setMessage] = useState('');
+    const [rememberMe, setRememberMe] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            // Send signup data to the backend
             const response = await axios.post(
                 'http://localhost:3030/user/login',
                 {
@@ -17,40 +17,71 @@ const SignInPage = () => {
                     password,
                 }
             );
-            console.log(response.data); // Success message from the backend
+            console.log(response.data);
 
-            // Reset the form
-            setEmail('');
-            setPassword('');
+            const responseData = response.data;
+
+            if (responseData.success) {
+                setEmail('');
+                setPassword('');
+            } else {
+                setMessage(responseData.message);
+            }
+            window.location.href = './box';
         } catch (error) {
-            console.error(error);
+            if (error.response && error.response.data) {
+                const errorData = error.response.data;
+                console.log(errorData);
+                setMessage(errorData.message);
+            } else {
+                console.error(error);
+            }
         }
     };
 
     return (
-        <div>
-            <h2>Sign In</h2>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="email">Email:</label>
-                <input
-                    type="email"
-                    id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
-                <br />
-                <label htmlFor="password">Password:</label>
-                <input
-                    type="password"
-                    id="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-                <br />
-                <button type="submit">Sign In</button>
-            </form>
+        <div className="main">
+            <div className="semi"></div>
+            <div className="rect">
+                <div>
+                    <h1>Welcome back!</h1>
+                </div>
+                <form onSubmit={handleSubmit}>
+                    <p>Email</p>
+                    <input
+                        type="email"
+                        placeholder="Email address"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="input-field"
+                    />
+                    <p>Choose Password</p>
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        className="input-field"
+                    />
+                    <div>
+                        <input
+                            type="checkbox"
+                            checked={rememberMe}
+                            onChange={(e) => setRememberMe(e.target.checked)}
+                            id="rememberMe"
+                        />
+                        <label htmlFor="rememberMe">Remember Me</label>
+                    </div>
+                    {message && <p>{message}</p>} {}
+                    <button
+                        type="submit"
+                        className="submit-button"
+                        onClick={handleSubmit}
+                    >
+                        Login
+                    </button>
+                </form>
+            </div>
         </div>
     );
 };

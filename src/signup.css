@@ -6,6 +6,12 @@
     position: relative;
 }
 
+.top-right {
+    top: 0;
+    right: 0;
+    position: relative;
+}
+
 .semi {
     width: 60%;
     height: 50%;
