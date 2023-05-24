@@ -36,3 +36,22 @@
     cursor: pointer;
     margin: auto;
 }
+.scroll-container {
+    display: flex;
+    justify-content: center;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.box {
+    width: 50px;
+    height: 20px;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 25px;
+    margin: 0 10px;
+}
+
+.different-color {
+    background: linear-gradient(to right, #00b4db, #0083b0);
+}

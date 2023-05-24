@@ -6,8 +6,15 @@
     padding: 10px;
     text-align: center;
     display: flex;
+    flex-direction: column; /* Added to stack elements vertically */
     justify-content: center;
     align-items: center;
     color: white;
     margin: 5px;
+}
+
+.heading {
+    font-size: 10px;
+    color: rgb(44, 38, 38);
+    margin-top: 5px; /* Added margin to create space below the image */
 }

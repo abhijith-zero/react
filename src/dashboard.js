@@ -52,21 +52,31 @@ const Container = () => {
             </div>
             <div className="container-row">
                 <BoxContainer imageSrc={image1} />
-                <BoxContainer imageSrc={image2} />
-                <BoxContainer imageSrc={image3} />
-                <BoxContainer imageSrc={image4} />
+                <BoxContainer imageSrc={image2} heading="construction" />
+                <BoxContainer imageSrc={image3} heading="Education" />
+                <BoxContainer imageSrc={image4} heading="Consultancy " />
             </div>
             <div className="container-row">
-                <BoxContainer imageSrc={image5} />
-                <BoxContainer imageSrc={image6} />
-                <BoxContainer imageSrc={image7} />
-                <BoxContainer imageSrc={image8} />
+                <BoxContainer imageSrc={image5} heading="Logistics" />
+                <BoxContainer imageSrc={image6} heading="Manufacturing" />
+                <BoxContainer imageSrc={image7} heading="Tourism" />
+                <BoxContainer imageSrc={image8} heading="IT" />
             </div>
             <div>
                 <span style={{ marginLeft: '5px' }}></span>{' '}
                 <button type="submit" className="text">
                     Next
                 </button>
+            </div>
+            <span style={{ marginLeft: '5px' }}></span>{' '}
+            <div class="scroll-container">
+                <div class="box different-color"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
             </div>
         </div>
     );
