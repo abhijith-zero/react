@@ -1,8 +1,8 @@
 .box-container {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background-color: white;
-    border: 1px solid #ac0d0d;
+    border: 1px solid grey;
     padding: 10px;
     text-align: center;
     display: flex;
