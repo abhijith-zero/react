@@ -6,7 +6,6 @@ import './dashboard.css';
 import './main.css';
 import SignupForm from './signup';
 import SignInPage from './signin';
-import Layout from './layout';
 import Container from './dashboard';
 
 const Myelement = (
@@ -16,7 +15,7 @@ const Myelement = (
                 <Route path="/signup" element={<SignupForm />}></Route>
                 <Route path="/Signin" element={<SignInPage />}></Route>
                 <Route path="/dashboard" element={<Container />}></Route>
-                <Route path="/" element={<Layout />}></Route>
+                <Route path="/" element={<SignupForm />}></Route>
             </Routes>
         </BrowserRouter>
     </>
